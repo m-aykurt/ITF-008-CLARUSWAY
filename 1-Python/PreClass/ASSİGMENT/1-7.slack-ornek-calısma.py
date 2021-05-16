@@ -432,6 +432,9 @@ print(counter("merhaba ben murat"))
 # 3 uncu çözüm
 print(len(list(filter(lambda x: x in list("aeıioöuü"),"merhaba ben murat"))))
 """
+#####
+
+"""
 def gcd_euclid_theorem(a, b):
   if a % b == 0:
     return b
@@ -441,3 +444,171 @@ def simplify(frac):
   num, den = map(int, frac.split("/"))
   gcd = gcd_euclid_theorem(num, den)
   return str(num // gcd) + (("/" + str(den // gcd)) if den // gcd != 1 else "")
+"""
+
+### can see stage
+"""
+def can_see():
+    n = int(input("kac defa liste gireceksiniz: "))
+    count = 0 
+    x = []
+    while n < count:
+        x.append(input("lsite: "))
+        
+    for i in x:
+        l_0 = [] 
+        for j in x[0]:
+            l_0.append(j)
+            if  max(l_0) == l_0[0]:
+                return "l_0 True"
+            else:
+                return "l_0 False"
+        l_1 = [] 
+        for j in x[1]:
+            l_0.append(j)
+            if  max(l_1) == l_1[0]:
+                return "l_1 True"
+            else:
+                return "l_1 False"
+        l_2 = [] 
+        for j in x[2]:
+            l_2.append(j)
+            if  max(l_2) == l_2[0]:
+                return "l_2 True"
+            else:
+                return "l_2 False"
+        l=[]
+        l.append(l_0)
+        l.append(l_1)
+        l.append(l_2)
+
+        
+    return all(l)
+            
+print(can_see())
+
+for k in range(len(i)-1):
+      if i[k]>=i[k+1]:
+          print(False)
+      else:
+          print(True)
+
+# kaan bey çözümü
+
+def see(l):
+    for x in range(len(l)-1,0,-1):
+        for y in range(len(l)-1,-1,-1):
+            if l[x][y] <= l[x-1][y]:
+                return False
+    return True
+print(see([[1,2,3],[2,3,4],[4,5,6]]))
+
+# raife hanım çözümü
+
+liste = [[1,2,3],[2,1,4],[4,5,6]]
+for i in zip(*liste):
+    for k in range(len(i)-1):
+      if i[k]>=i[k+1]:
+          print(False)
+      else:
+          print(True)
+"""
+
+# Create a function that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function. For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10. Examples
+"""
+def add(n):
+    count = 0
+    for i in range(n+1):
+        count += i 
+    return count
+print(add(4))
+"""
+# raife hanım çözümü
+"""
+def indexle(cumle):
+  sozluk={}
+  yeni=""
+  for i in cumle.split():
+    for k in i:
+      if k.isdigit():
+        sozluk[int(i[i.index(k):])]=i[:i.index(k)]
+        break
+  for i in sorted(sozluk) :
+    yeni+=(sozluk[i]+" ")
+  return yeni.strip().lower().capitalize()
+print(indexle("merhaba1 murat3 ben2"))
+"""
+"""
+s =  'Bir3 bu1 test4 kolay2'.split()
+liste = []
+for i in s:
+    liste.append(i[::-1])
+sort = sorted(liste)
+lis = []
+sentence = ""
+for j in sort:
+    lis.append(j[::-1])
+    sentence += " "+ j[::-1]
+test = ''.join( filter(lambda x:  not x.isnumeric(), sentence))
+print(test.strip().capitalize())
+"""
+# perfect number
+"""
+def perf(n):
+    return True if sum([i for i in range(1,n) if not n%i]) == n else False
+
+print(perf(6))
+print(perf(28))
+print(perf(496))
+print(perf(497))
+
+def per(n):
+    return sum(filter(lambda x: n % x == 0, range(1, n))) == n
+print(per(25))
+"""
+"""
+# palindrom
+def same_word(s):
+    new_text = "".join(filter(str.isalpha,s)).lower()
+    return new_text == new_text[::-1]
+
+print(same_word("nurses run"))
+"""
+# letter frequency 
+"""
+def freq(str):
+    sozluk = {}
+    for i in str:
+        if i in sozluk:
+            sozluk[i] += 1
+        else:
+            sozluk[i] = 1
+                
+            for i in str:
+                if sozluk[i] != 0:
+                    return f"{i} : {sozluk[i]}"
+                    sozluk[i] = 0
+
+print(freq("merhaba ben murat"))
+print(freq("merhaba ben murat"))
+print(freq("merhaba ben murat"))
+
+                
+    
+"""
+def freq(str):
+
+    sozluk = {}
+    for i in str:
+        if i in sozluk:
+            sozluk[i] += 1
+        else:
+            sozluk[i] = 1
+
+    for i in str:
+ 
+        if sozluk[i] != 0 and i != " ":
+            print("{}:{}".format(i,sozluk[i]), end =" ")
+            sozluk[i] = 0
+            
+freq("merhaba ben murat")
