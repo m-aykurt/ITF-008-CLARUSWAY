@@ -566,13 +566,16 @@ def per(n):
     return sum(filter(lambda x: n % x == 0, range(1, n))) == n
 print(per(25))
 """
-"""
+
 # palindrom
+"""
 def same_word(s):
     new_text = "".join(filter(str.isalpha,s)).lower()
     return new_text == new_text[::-1]
 
 print(same_word("nurses run"))
+print(same_word("muratti mur"))
+print(same_word("murat tarum"))
 """
 # letter frequency 
 """
@@ -594,8 +597,7 @@ print(freq("merhaba ben murat"))
 print(freq("merhaba ben murat"))
 
                 
-    
-"""
+
 def freq(str):
 
     sozluk = {}
@@ -612,3 +614,455 @@ def freq(str):
             sozluk[i] = 0
             
 freq("merhaba ben murat")
+
+"""
+# sayıyı 10 luk sisteme göre dönüştürme
+# kaan bey in çözümü
+"""
+def genisletilmis_form(num):
+    if '.' in str(num):
+        tam_sayi, ondalik_sayi = str(num).split('.')
+        result = [str(int(num) * (10 ** i)) for i, num in enumerate(tam_sayi[::-1]) if num != '0'][::-1]
+        result += [str(num) + '/' + str(10 ** (i + 1)) for i, num in enumerate(ondalik_sayi) if num != '0']
+        return ' + '.join(result)
+    else:
+        result = [str(int(num) * (10 ** i)) for i, num in enumerate(str(num)[::-1]) if num != '0'][::-1]
+        return ' + '.join(result)
+    
+print(genisletilmis_form(5751))
+"""
+
+# parantezleri ayırma
+
+"""
+# 1nci çözüm
+
+def split(str_input):
+  my_list = []
+  count = 0
+  s = ""
+  for char in str_input:
+    if char == "(":
+      count += 1
+      s += "("
+    else:
+      count -= 1
+      s += ")"
+      if count == 0:
+        my_list.append(s)
+        s = ""
+  return my_list
+print(split("()((()))()"))
+
+# 2nci çözüm
+
+def my_split(x):
+    a = b = 0
+    p = ""
+    result = []
+    for i in x:
+        p += i
+        if i == '(':
+            a += 1
+        else:
+            b += 1
+        if a == b:
+            result.append(p)
+            p = ""
+    return result
+"""
+# tekil mi çoğul mu
+"""
+l1 = ["cow", "pig", "cow", "cow"]
+
+t = []
+c = []
+for i in l1:
+    [c.append(i) if l1.count(i)>1 else t.append(i)]
+    
+print(f"{c[0]+'s'} , {t[0]}")
+"""      
+
+# complex işlemler
+"""
+def sum_complex(x):
+    x = [i.replace("i", "j") for i in x]
+    s = 0 + 0j
+    for i in range (len(x)):
+        s += complex(x[i])
+    return str(s).strip("()").replace("j", "i").replace("+0i", "").replace("0i", "0")
+
+print(sum_complex(["2+3i", "-1-5i"]))
+"""
+
+
+"""
+def sort(x):
+    new_list=[]
+    list_one=[i for i in range(len(x)) if x[i]==1] #1 in olduğu indexin yeri
+    for i in list_one:
+         if x[i-1]-x[i]!=1:
+            new_list.append([x[i]])
+         else: 
+            new2_list=[1]  
+            for j in range(i,0,-1):
+              if x[j-1]-x[j]==1: 
+                new2_list.append(x[j-1])
+              else:
+                  break  
+            new_list.append(sorted(new2_list,reverse=True))
+    last_list=[len(new_list),new_list]
+    return last_list
+
+def final_countdown(l):
+  l=l[::-1]
+  yeni={}
+  count=0
+  for i in range(len(l)):
+    if l[i]==1:
+      count+=1
+      yeni[count]=[l[i]]
+      if i==len(l)-1:
+        break
+      else:
+        while l[i+1]==l[i]+1:
+          yeni[count].append(l[i+1])
+          if i<len(l)-2:
+            i+=1
+          else:
+            break
+  for i in yeni:
+    yeni[i]=yeni[i][::-1]
+  return [count,list(yeni.values())[::-1]]
+"""
+# yon bulma
+
+"""
+
+def yon(l):
+    s={"Kuzey":"Guney","Guney":"Kuzey","Dogu":"Bati","Bati":"Dogu"}
+    i=0 
+    while i<len(l)-1:
+        if s[l[i]]==l[i+1]:
+            del l[i:i+2]
+            i=0
+        else:
+            i+=1
+    return l
+print(yon(["Kuzey","Guney","Bati","Bati","Dogu"]))
+
+
+"""
+
+# sıralı listeden eksiği bulma
+"""
+def eksik_b(l):
+    new_l = []
+    for i in l:
+        new_l.append(ord(i))
+    return [chr(x) for x in range(new_l[0],new_l[-1]+1) if x not in new_l]
+
+print(eksik_b(["O","Q","R","S"]))
+
+"""       
+
+# stringin indekslerini sırasıyla arttırma
+"""
+def harf_b(text):
+    new_l=[]
+    for i in range(len(text)):
+        if text[i] != " ":
+            new_l.append((text[:i]+text[i].upper()+text[i+1:]))
+    return new_l
+print(harf_b("Hello World"))
+print(len(['Merhaba murat', 'MErhaba murat', 'MeRhaba murat', 'MerHaba murat', 'MerhAba murat', 'MerhaBa murat', 'MerhabA murat', 'Merhaba Murat', 'Merhaba mUrat', 'Merhaba muRat', 'Merhaba murAt', 'Merhaba muraT']))
+    
+    
+wave = "Hello World"
+print([wave[:i] + wave[i].upper() + wave[i + 1:] for i in range(len(wave)) if wave[i].isalpha()])
+"""
+# tek sayıların indeslerini düzeltme
+"""
+def sort_odds(l):
+    odd=[i for i in l if i%2]
+    odd.sort(reverse=True)
+    new=[]
+    for i in l:
+        if i%2:
+            new.append(odd[-1])""
+            odd.pop()
+        else:
+            new.append(i)
+    return new
+"""
+
+# tek-cift sayı 1 tane ise bulma
+"""
+def tek(l):
+    odd = []
+    even = []
+    [odd.append(i) if not i%2 else even.append(i) for i in l] 
+    return odd if len(odd)<=1 else even
+
+print(tek([2, 4, 0, 100, 4, 11, 2602, 36]))
+
+lst = [20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]
+for i in lst:
+  if (lst.count(i))%2 == 1:
+    print(i)
+    break
+"""   
+
+# permutasyon - interview sorusu joseph hoca
+
+"""
+def perm(l):
+    new_l = []
+    for i in l:
+        for j in l:
+            for k in l:
+                if i!=j and j!=k and k!=i:
+                    new_l.append([i,j,k])
+    return new_l                        
+print(perm([1,2,3]))
+
+# diğer çözüm
+
+res = [[]]
+liste = range(1,4)
+for r in res:
+    for j in liste:
+        if j not in r:
+            res.append([j] + r)
+result = []
+for i in res:
+    if len(i) >= len(liste):
+        result.append(i)
+print(result)
+"""
+
+# populasyon ne zaman gecer
+
+"""
+p = 1000
+d = 0
+while p<1200:
+    p = p * 1.02 +50
+    d +=1
+print(d,p)
+"""       
+# sıfırları atma
+
+"""
+def ayir(st):
+    l = st.replace("0"," ").split()
+    sozluk = {
+            "first_name":l[0],
+            "last_name":l[1],
+            "id":l[2]}
+    return sozluk
+
+print(ayir("John000Doe000123"))
+"""
+
+#  Bize verilen listede yer alan sayilarin, bitişik bir alt dizinin maksimum toplamını bulmak.
+"""
+def buyuk_topla(l):
+    for i in range(len(l)):
+        for j in l[i:]:
+            if l[i]>l[j]:
+                return sum(l[i:])
+print(buyuk_topla([7, 4, 11, -11, 39, 36, 10, -6, 37, -10, -32, 44, -26, -34, 43, 43] ))
+print(buyuk_topla([7, 4, 11, -11, 39, 36, 10, -6, 37, -10, -32]))
+print(buyuk_topla( [-2,-4,-15,-6,-9,-27]))
+
+
+def maxSubArray(l): 
+        count = 0
+        max_count = max(l)
+        for x in l:
+            count+=x
+            if count <0:
+                count=0
+            elif count > max_count:
+                max_count = count
+        return max_count
+
+print(maxSubArray([7, 4, 11, -11, 39, 36, 10, -6, 37]))
+"""
+# "56 65 74 100 99 68 86 180 90"  sirali numaralari, agirliklarina gore listeliyoruz ve sonucta
+"""
+def foo(s):
+  return " ".join(sorted(s.split(), key = lambda x : sum(map(int, list(x)))))
+
+print(foo("56 65 74 100 99 68 86 180 90"))
+"""
+# stringi işleme çevirip sonuç alma
+"""
+def arithmetic_operation(string):
+  num_1, operation, num_2 = string.split()
+  num_1 = int(num_1)
+  num_2 = int(num_2)
+  if operation == "+":
+    return num_1 + num_2
+  elif operation == "-":
+    return num_1 - num_2
+  elif operation == "*":
+    return num_1 * num_2
+  elif operation == "//":
+    if num_2 == 0:
+      return -1
+    else:
+      return num_1 // num_2
+print(arithmetic_operation("12 + 12"))
+print(arithmetic_operation("12 - 12"))
+print(arithmetic_operation("12 * 12"))
+print(arithmetic_operation("12 // 0"))
+"""
+## listedeki sayılardan oluşan çiftler diğer sayıya eşitse
+"""
+def sum_pairs(liste, sum_num):
+    for i in range(len(liste)-1):
+        for j in range(i+1):
+            if liste[j]+liste[i+1]==sum_num:
+                return [liste[j],liste[i+1]]
+            
+print(sum_pairs([11,3,7,5], 10))
+"""
+
+# s2 s1'in içindeyse
+"""
+def scramble(s1, s2):
+    for i in s2:
+        if i in s1:
+            continue
+        else:
+            return False
+    return True 
+print(scramble("codewars", "cdw"))
+print(scramble("rkqodlw", "world"))
+
+
+def scramble(s1,s2):
+    return "".join(filter(lambda x: s2.count(x)<=s1.count(x), s2))==s2
+print(scramble("rkqodlw", "world"))
+
+def scramble(s1, s2):
+    return all([True if s2.count(i)<=s1.count(i) else False for i in set(s2)])
+"""
+
+# anagram
+"""
+def anagrams(word, words):
+    return [i for i in words  if sorted(word)==sorted(i)]
+"""
+"""
+
+def economic(n):
+    fact = []
+    i = 2
+    while i <=n:
+        if n%i == 0:
+            fact.append(i)
+            n = n // i
+        else:
+            i += 1
+    d = {}
+    for i in fact:
+        if i in d:
+            d[i]+=1
+        else:
+            d[i]=1
+    if len(d.keys())==1:
+        print(d.keys()^d.values())
+    elif len(d.keys())>1:
+        return d.keys()
+    
+    if len(n)>len(d.keys()):
+        return "Wasteful"
+    elif len(n)==len(d.keys()):
+        return "Equidigital"
+    else:
+        return "Frugal"
+           
+           
+print(economic(30))
+            
+
+def is_economical(n):
+  n1=n
+  pf = []
+  upf=[]
+  for i in range(2,n):
+    while n1%i==0:
+      n1=n1//i
+      pf.append(i)
+  for i in pf:
+    if pf.count(i)>1:
+      upf.append(i)
+      upf.append(pf.count(i))
+      pf=list(filter(lambda a:a!=i, pf))
+    elif pf.count(i)==1:
+      upf.append(i)
+      pf=list(filter(lambda a:a!=i, pf))
+  upf="".join(list(map(str,upf)))
+  if len(str(n))==len(upf):
+    return "Equidigital"
+  elif len(str(n)) > len(upf):
+    return "Frugal"
+  elif len(str(n)) < len(upf):
+    return "Wasteful"
+"""
+# permustasyon
+"""
+l = [1,2,3]
+l1 = []
+for i in l:
+    for j in l:
+        for k in l:
+            if i!=j and j!=k and k!=i:
+                l1.append([i,j,k])
+print(l1)
+"""
+# permutasyon
+"""
+num_set = {1,2,3}
+free_set = {1}
+
+result = num_set - free_set
+print(result)
+
+num = [1,2,3]
+solution = [[]]
+for index in range(len(num)):
+    solution = [i+[j] for i in solution for j in num_set.difference(set(i))]
+    print(solution)
+print(solution)
+
+
+# joseph hocanın çözümü 
+solution = [[]]
+num = [1,2,3,4]  # bu listenin permütasyonunu (her ihtimalini) yazdırmamız isteniyor
+num_set = set(num)
+for index in range(len(num)) :  # num eleman sayısı kadar iterate et (yani 3 kere)
+  solution = [i + [j] for i in solution for j in num_set.difference(set(i))]  
+  print(solution)  # her iterasyon çıktısı
+solution   # print --- istenen sonuç
+"""
+
+# değişik sorular
+"""
+def count(mylist):
+    return len(set(mylist))
+print(count((1, 1, 3)))
+"""
+# dğişik sorular if olmadan diğer çözüm Emre Bey'in cevabı:
+"""
+equal = (lambda *numbers:numbers.count(max(numbers, key=numbers.count)))
+print(equal(1, 1, 2))
+"""
+# değişik sorular Hoca'nın cevabı:
+"""
+equall = lambda x,y,z: [x,y,z].count(max([x,y,z], key=[x,y,z].count)) \
+          if [x,y,z].count(max([x,y,z], key=[x,y,z].count)) > 1 else 0
+"""
