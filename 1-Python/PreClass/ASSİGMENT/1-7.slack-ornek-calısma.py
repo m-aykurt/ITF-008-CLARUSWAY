@@ -1066,3 +1066,6 @@ print(equal(1, 1, 2))
 equall = lambda x,y,z: [x,y,z].count(max([x,y,z], key=[x,y,z].count)) \
           if [x,y,z].count(max([x,y,z], key=[x,y,z].count)) > 1 else 0
 """
+
+
+
