@@ -1,0 +1,23 @@
+p[title]{
+    border: 1px solid green;
+    padding: 5px;
+}
+p[title="third paragraph"]{
+    border: hotpink solid;
+}
+p[title="second"]{
+    background-color: gray;
+}
+p[title~="forth"]{
+    background-color: green;
+}
+a[href^=https]{
+    color:red;
+}
+a[href$="com"]{
+    color: royalblue;
+}
+input[type="button"]{
+    color: yellow;
+    background-color: red;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+		  input
+		
+		  color:#495057;
+		  background-color:#fff;
+		  border-color:#ced4da;  		  
+		  border-color:#80bdff;(focus)
+		  font-size:16px;
+		
+		  button
+		
+		  color:#fff;
+		  background-color:#007bff;
+		  border-color:#007bff;		  
+		  
+		  background-color:#0069d9;
+		  border-color:#0062cc;
+		*/
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 20px;
+        }
+        .form-group{
+            margin-bottom: 6px;
+        }
+        label{
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+        .form-control{
+          
+            width:100%;
+            padding: 7px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        .form-control:focus{
+            border-color:#80bdff;
+            outline: 0;
+
+        }
+        .btn{
+            padding: 6px 12px;
+            border-radius: 5px;
+            background-color:#007bff;    
+            color: white;  
+            border: 1px solid #0062cc;
+         }
+         .btn:hover{
+            background-color:#0069d9;
+            border: 1px solid #0069d9<;
+
+         }
+         .col-25{
+            width: 25%;
+            float: left;
+            margin-bottom: 5px;
+         }
+         .col-75{
+            width: 75%;
+            float: left;
+            margin-bottom: 5px;
+         }
+         .clearfix{
+             content: "";
+             display: block;
+             clear: both;
+         }
+         #form-2{
+             background-color: #f2f2f2;
+             padding: 20px;
+             border-radius: 5px;
+         }
+         .is-sucsess{
+             border-color: yellowgreen;
+         }
+    </style>
+</head>
+<body>
+    <div id="form-1">
+        <div class="form-group clearfix ">
+            <label for="FullName">FullName</label>
+            <input type="text" name="FullName"  class="is-sucsess form-control">
+
+        </div>
+        <div class="form-group clearfix">  
+            <label for="email">email</label> 
+            <input type="text" name="email"  class="form-control">
+        </div>
+        <div class="form-group clearfix">
+            <label for="message">message</label>
+            <textarea name="message"  class="form-control"></textarea>
+        </div>
+        <div class="form-group clearfix">
+            <label for="country">country</label>
+            <select name="country"  class="form-control">
+                <option value="Türkiye">Türkiye</option>
+                <option value="Almanya">Almanya</option>
+
+            </select>
+        </div>
+            <input class="btn" type="submit" value="submit">
+    </div>
+    <br><hr><br>
+    <div id="form-2">
+        <div class="form-group">
+        <div class="col-25">
+            <label for="FullName">FullName</label>
+        </div>
+        <div class="col-75">
+            <input type="text" name="FullName"  class="form-control">
+        </div> 
+
+        </div>
+        <div class="form-group">  
+            <div class="col-25">
+                <label for="email">email</label>
+            </div> 
+            <div class="col-75">
+            <input type="text" name="email"  class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-25">
+                <label for="message">message</label>
+            </div> 
+            <div class="col-75"> 
+                <textarea name="message"  class="form-control"></textarea>
+            </div>
+            </div>
+        <div class="form-group">
+            <div class="col-25">  
+                <label for="country">country</label>
+            </div>
+            
+            <div class="col-75">
+                <select name="country"  class="form-control">
+                    <option value="Türkiye">Türkiye</option>
+                    <option value="Almanya">Almanya</option>
+    
+                </select>
+            </div>
+        </div>
+            <input class="btn" type="submit" value="submit" style="margin-left: 25%;">
+    </div>   
+</body>
+</html>

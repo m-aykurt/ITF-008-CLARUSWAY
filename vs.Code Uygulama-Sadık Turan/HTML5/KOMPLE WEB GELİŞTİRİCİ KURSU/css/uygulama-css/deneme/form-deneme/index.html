@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        body{
+            margin: 20px;
+            
+        }
+        input[type="text"],textarea,select{
+            box-sizing: border-box;
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 7px 10px;
+            margin: 7px 0;
+        }
+        input[type="text"],textarea,select{
+            border-color: blue;
+           
+        }
+        label{
+            margin-bottom: 3px;
+            display: inline-block;
+        }
+        
+    </style>
+</head>
+<body>
+    <label for="FullName">FullName</label>
+    <input type="text" name="FullName">
+    <label for="email">email</label>
+    <input type="text" name="email">
+    <label for="Text">Text</label> 
+    <textarea name=""></textarea>
+    <label for="country">country</label> 
+    <select name="country">
+        <option value="Türkiye">Türkiye</option>
+        <option value="Almanya">Almanya</option>
+        <option value="Abd">Abd</option>
+    </select>
+    <input type="submit" name="submit">
+</body>
+</html>

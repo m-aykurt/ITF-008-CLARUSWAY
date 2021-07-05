@@ -1,0 +1,34 @@
+#container{
+	width: 1140px;
+    
+	
+}
+#blog-post-container{
+	width: 75%;
+	float: left;
+    
+    
+}
+
+#other-posts{
+	width: 25%;
+   float: right;
+	
+    
+}
+
+#author-box
+{
+	
+    clear: both;
+}
+.tags li{
+    list-style: none;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    
+}
+a{
+    text-decoration: none;
+}

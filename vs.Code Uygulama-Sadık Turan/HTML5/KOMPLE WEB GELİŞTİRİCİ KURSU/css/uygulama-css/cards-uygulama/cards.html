@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .card{
+            width: 40%;
+            margin: 20px;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+            border-radius: 8px;
+            transition: box-shadow 2s;
+         
+        }
+        
+        .card-image{
+            width: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            transition: opacity 2s;
+            
+        }
+        .card:hover{
+            box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2);
+      
+        }
+        .card-image:hover{
+           
+           opacity: 0.7 ;
+        }
+        .card-title{
+            padding: 20px;
+            margin: 20px;
+            font-size: 22px;
+        }
+        .card-text{
+            margin-top: 20px;
+
+        }
+        .card-body{
+            padding: 10px 16px;
+        }
+    </style>
+<body>
+    <div class="card">
+        <img src="img/1.jpeg" alt="" class="card-image">
+        <div class="card-title">
+            <h4>Card title</h4>
+            <p class="card-text">Card text</p>
+        </div>
+    </div>
+</body>
+</html>

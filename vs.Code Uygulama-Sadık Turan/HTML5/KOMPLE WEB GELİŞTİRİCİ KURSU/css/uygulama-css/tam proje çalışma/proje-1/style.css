@@ -1,0 +1,221 @@
+*{
+  
+    padding: 5px;
+    box-sizing: border-box;
+}
+html{
+    font-size: 8px;
+}
+
+body{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.6rem;
+    font-weight:500;
+    background-color: #E1E6ED;
+    line-height: 1.5;
+    
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+    
+}
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#container{
+    width: 100%;
+    
+    
+}
+.hr-light{
+    border: none;
+    border-top:1px solid rgb(190, 190, 190);
+    max-width: 100%;
+    margin-top: 4rem;
+    
+}
+.col-left{
+    width: 25%;
+    height: 100%;
+    float: left;
+    background-color:#F0F4F7;
+    /*problem-2*/
+
+   
+}
+.col-right{
+    width: 75%;
+    float: right;
+   
+    background-color: white;
+}
+
+.container-right{
+    width: 100%;
+}
+
+.right-1{
+    width: 75%;
+    float: left;
+    padding-right: 2rem;
+}
+
+.right-2{
+    width: 25%;
+    float: right;
+    padding-left: 2rem;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+i{
+    color: white;
+}
+
+.col-list a{
+    color: black;
+}
+
+ul{
+    list-style-type: none;
+    
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.box{
+    border: 1px solid gainsboro ;
+    border-radius: 0.4rem;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    padding: 0.6rem 0.6rem;
+    color: rgb(155, 155, 155);
+    
+    padding-left: 1.5rem;
+
+}
+.pg-nmb li{
+    display: inline-block;
+}
+
+
+.date-tag{
+    padding: 0.1rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italics;
+    margin-top: -2rem;
+    
+}
+
+/* buton--problem-1*/
+/* yorum-1
+.btn{
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: turquoise;
+    border-radius: 0.5rem;
+    font-weight: 400;
+    margin-top: 2rem;
+
+}
+
+
+
+.btn-read{
+    border-color: turquoise;
+    font-size: 2rem;
+    width:auto;
+    height: auto;
+    padding: 1rem 2rem;
+    color: turquoise; 
+    transition: all 0.5s;
+    background-color: white;
+}
+
+.btn-read:hover{
+    color: white ;
+    background-color: turquoise !important;
+}
+*/
+
+p{
+    font-size: 1.4rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.search{
+ margin-right: 15rem;
+ margin-top: 22rem;
+ width: 20rem;
+ opacity: 0.6;
+}
+
+.search-button{
+   position: absolute;
+   right: 7rem;
+   top: 28rem;
+    
+}
+
+.profile-photo{
+    border-radius: 50%;
+}
+
+.about-text{
+    text-align: center;
+}
+
+.share{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.share li{
+    display: inline-block;
+   
+    width: 26px;
+    height: 26px;
+    line-height: 20px;
+    font-size: 18px;
+    transition: all 0.5s;
+    background-color: #4a4a4a;
+    border-radius: 50%;
+    color: #fff !important;
+   
+}
+/*problem-3*/
+
+li a i{
+    padding-right: 2rem;
+}
+
+
+.categories li a{
+     
+    color: black;
+    font-size: 1.3rem;
+    float: left;
+    margin-left: -1rem;
+    margin-top: 1rem;
+}
+
+
+
+p.fam-blogezy{
+    font-family: 'Dancing Script', cursive;
+
+}

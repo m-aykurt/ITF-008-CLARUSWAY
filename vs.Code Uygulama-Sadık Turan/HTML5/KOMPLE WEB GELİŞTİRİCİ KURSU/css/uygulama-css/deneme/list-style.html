@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Shippori Mincho', serif;
+            
+        }
+        a{
+            color: green;
+            text-decoration: none;
+           
+            
+        }
+
+        .btn{
+          
+            padding: 12px 30px;
+            border: none;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+            
+        }
+        .btn:hover{
+          
+            width: 100px;
+            padding: 12px 30px;
+        }
+        .primary{
+            background-color: rgb(89, 89, 173);
+            color: white;
+        }
+        .primary:hover{
+            opacity: 0.7;
+        }
+        .secondary{
+            background-color: rgb(158, 158, 163);
+            color: white;
+        }
+        .secondary:hover{
+            opacity: 0.7;
+        }
+        .sucsess{
+            background-color: rgb(17, 170, 119);
+            color: white;
+        }
+        .sucsess:hover{
+            opacity: 0.7;
+        }
+        .danger{
+            background-color: rgb(184, 33, 33);
+            color: white;
+        }
+        .danger:hover{
+            opacity: 0.7;
+        }
+        .warning{
+            background-color: rgb(170, 211, 105);
+            color: white;
+        }
+        .warning:hover{
+            opacity: 0.7;
+        }
+        .btn-xs{
+          padding: 12px 20px;
+          font-size: 12px;
+        }
+        .btn-sm{
+          padding: 16px 24px;
+          font-size: 16px;
+        }
+        .btn-md{
+          padding: 20px 28px;
+          font-size: 20px;
+        }
+        .btn-lg{
+          padding: 24px 32px;
+          font-size: 24px;
+        }
+        .btn-bg{
+          padding: 28px 36px;
+          font-size: 28px;
+        }
+        .btn-block{
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <div id="form-1">
+        <a href="/link1" class="btn primary">Primary</a>
+        <a href="/link2" class="btn secondary">Secondary</a>
+        <a href="/link1" class="btn sucsess">Sucsess</a>
+        <a href="/link2" class="btn danger">Danger</a>
+        <a href="/link2" class="btn warning">Warning</a>
+    </div>
+    <br><hr><br>
+    <div id="form-2">
+        <a href="/link1" class="btn primary btn-xs">Primary</a>
+        <a href="/link2" class="btn secondary btn-sm">Secondary</a>
+        <a href="/link1" class="btn sucsess btn-md">Sucsess</a>
+        <a href="/link2" class="btn danger btn-lg">Danger</a>
+        <a href="/link2" class="btn warning btn-bg">Warning</a>
+    </div>
+    <a href="/link1" class="btn primary btn-block">Primary</a>
+    <a href="/link2" class="btn secondary btn-block">Secondary</a>
+</body>
+</html>

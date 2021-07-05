@@ -1,0 +1,29 @@
+
+
+
+ p+div{
+     color: brown;
+     background-color: blue;
+ }   
+
+
+
+
+/*
+*{
+    border: 2px solid red;
+}
+p {
+    background-color: blue;
+}
+
+div p{
+    border: 2px solid blue;
+}
+div.box,p{
+    color:blue;
+}
+div>p{
+    border: 2px solid blue;
+}
+/*

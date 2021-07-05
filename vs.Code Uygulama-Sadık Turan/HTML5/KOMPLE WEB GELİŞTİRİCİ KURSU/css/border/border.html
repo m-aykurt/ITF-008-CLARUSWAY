@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 120px;
+            height: 120px;
+            background-color: gainsboro;
+            margin: 10px;
+            padding: 10px;
+            float: left;
+        }
+        #first{
+            border: red 2px solid;
+        
+        }
+        #second{
+            border-style:ridge;
+            
+            border-color: seagreen;
+            border-radius: 50%;
+            
+
+        }
+        #third{
+            border-top-style: groove;
+            border-right-style: double;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 50vmax;
+            border-color: lawngreen;
+
+        }
+        #msgbox{
+            background-color: lemonchiffon;
+            border-left: 8px green groove;
+            margin: 10px;
+            padding: 20px;
+            width: 80%;
+        }
+        div.clear{
+            clear: both;
+            position: fixed;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="box" id="first">box 1</div>
+    <div class="box" id="second">box 1</div>
+    <div class="box" id="third">box 1</div>
+    <div></div>
+    <div id="msgbox" class="clear"> message box</div>
+</body>
+</html>

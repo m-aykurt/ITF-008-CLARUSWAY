@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+       
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            list-style: none;
+        }
+        li{
+            display: inline-block;
+            float: left;
+            margin-right: 1px;
+        }
+        li a{
+            display: block;
+            background-color: black;
+            min-width: 140px;
+            color: white;
+            text-decoration: none;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        li a:hover{
+            background-color: rgb(20, 83, 20);
+            cursor: pointer;
+           
+        }
+        li:hover ul a{
+            background-color:#f3f3f3;
+            color: black;
+            height: 40px;
+            line-height: 40px;
+           
+           
+        }
+        li:hover ul a:hover{
+            background-color: rgb(20, 83, 20) ;
+            color: white;
+        }
+        li ul li{
+            display: block;
+            float: none;
+        }
+        li ul li a{
+            text-align: left;
+            min-width: 100px;
+            padding: 0 20px;
+        }
+        li ul{
+            display: none;
+        }
+        ul li a:hover + .hidden,.hidden:hover{
+            display: block;
+        }
+ 
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="#">Anasayfa</a>
+            <ul class="hidden">
+                <li><a href="#">Komple Uygulamalı Web geliştirme eğitimi</a>
+                </li>
+                <li><a href="#">Web programlama eğitimi:Asp.net MVC</a>
+                </li>
+                <li><a href="#">Çevre Koruma makale-1</a>
+                </li>
+                <li><a href="#">Çevre Koruma makale-1</a>
+                </li>
+            </ul>
+        </li>
+   
+        <li>
+            <a href="#">Hakkımızda</a>
+            <ul class="hidden">
+                <li><a href="#">Komple Uygulamalı Web geliştirme eğitimi</a>
+                </li>
+                <li><a href="#">Web programlama eğitimi:Asp.net MVC</a>
+                </li>
+                <li><a href="#">Çevre Koruma makale-1</a>
+                </li>
+                <li><a href="#">Çevre Koruma makale-1</a>
+                </li>
+                <li><a href="#">Komple Uygulamalı Web geliştirme eğitimi</a>
+                </li>
+                <li><a href="#">Web programlama eğitimi:Asp.net MVC</a>
+                </li>
+            </ul>
+        </li>
+    
+        <li>
+            <a href="#">Kurslar</a>
+            <ul class="hidden">
+                <li><a href="#">Komple Uygulamalı Web geliştirme eğitimi</a>
+                </li>
+                <li><a href="#">Web programlama eğitimi:Asp.net MVC</a>
+                </li>
+            </ul>
+            
+        </li>
+ 
+        <li>
+            <a href="#">Makale</a>
+            <ul class="hidden">
+                <li><a href="#">Çevre Koruma makale-1</a>
+                </li>
+                <li><a href="#">Çevre Koruma makale-1</a>
+                </li>
+            </ul>
+        </li>
+  
+        <li>
+            <a href="#">İletişim</a>
+        </li>
+    </ul>
+</body>
+</html>
